@@ -141,7 +141,7 @@ function validate(values){
     if(!values.mobile){
         errors.mobile="Enter your mobile"
     }
-    if(values.type == -1){
+    if(values.type === -1){
         errors.type="Choose your user type"
     }
     return errors;
