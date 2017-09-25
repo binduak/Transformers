@@ -1,9 +1,27 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
+import ReduxPromise from 'redux-promise'
+import reducers from './reducer';
+import { BrowserRouter,Route, Switch } from 'react-router-dom';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import Registration from "./component/registration_new";
+import Login from "./component/Login";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const createStoreWithMiddleware = compose(applyMiddleware(ReduxPromise)(createStore));
+
+ReactDOM.render(
+
+    <Provider store={createStoreWithMiddleware(reducers)} >
+        <BrowserRouter>
+            <Switch>
+            <Route path="/register" component={Registration} />
+            <Route path="/" component={Login} />
+            </Switch>
+        </BrowserRouter>
+    </Provider>
+
+    , document.getElementById('root'));
