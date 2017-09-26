@@ -35,6 +35,7 @@ class NewRegistration extends Component {
     }
 
     renderTextField(field) {
+        console.log(field);
         return <span><input type="text" className="form-control" required {...field.input} />
         </span>
     }
@@ -67,7 +68,7 @@ class NewRegistration extends Component {
                 <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                     <div className="form-group row">
                         <label for="name" className="col-sm-2 col-form-label">Name</label>
-                        <Field label="Name" name="name" component={this.renderTextField} type="text"/>
+                        <Field label="Name" placeholder="Name" name="name" component={this.renderTextField} type="text"/>
                     </div>
                     <div className="form-group row">
                         <label for="emailID" className="col-sm-2 col-form-label">Email ID</label>
