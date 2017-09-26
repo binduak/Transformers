@@ -8,14 +8,15 @@ import ReduxPromise from 'redux-promise'
 import reducers from './reducer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Registration from "./component/registration";
-import Login from "./component/Login";
+import Login from "./component/login";
 
 import './index.css';
 
 const createStoreWithMiddleware = compose(applyMiddleware(ReduxPromise)(createStore));
 
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)} >
+   <Provider store={createStoreWithMiddleware(reducers)} >
+
       <div className="login-page">
         <div className="form">
           <BrowserRouter>
@@ -26,6 +27,4 @@ ReactDOM.render(
           </BrowserRouter>
         </div>
       </div>
-    </Provider>
-
-    , document.getElementById('root'));
+  </Provider> , document.getElementById('root'));

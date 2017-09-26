@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form'
 import {register} from '../action/user_action'
 import {connect} from "react-redux";
+const  { DOM: { input, select, textarea } } = React
 
 class Registration extends Component {
 
@@ -19,38 +20,33 @@ class Registration extends Component {
     }
 
     renderExpField(field) {
-        return <span><input type="text" className="form-control" required {...field.input} />
-        </span>
+        return <input type="text" placeholder={field.placeholder} className="form-control" required {...field.input} />
     }
 
     renderEmailField(field) {
-        return <span><input type="email" className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        return <input type="email" placeholder={field.placeholder} className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                             required {...field.input} />
-        </span>
     }
 
     renderPasswordField(field) {
-        return <span><input type="password" className="form-control" pattern=".{8,}" required {...field.input} />
-        </span>
+        return <input type="password" placeholder={field.placeholder} className="form-control" pattern=".{8,}" required {...field.input} />
     }
 
     renderTextField(field) {
         console.log(field);
-        return <span><input type="text" className="form-control" required {...field.input} />
-        </span>
+        return <input type="text" placeholder={field.placeholder} className="form-control" required {...field.input} />
     }
 
     renderTextArea(field) {
-        return <span><textarea className="form-control" required  {...field.input} />
-        </span>
+        return <textarea placeholder={field.placeholder} className="form-control" required  {...field.input} />
     }
 
     renderTypeSelect(field) {
-        return <span><select className="form-control" required {...field.input}>
+        return <select className="form-control" required {...field.input}>
             <option value="-1">--Select--</option>
             <option value="0">Buyer</option>
             <option value="1">Seller</option>
-        </select></span>
+        </select>
     }
 
     renderGenderSelect(field) {
@@ -67,36 +63,28 @@ class Registration extends Component {
             <div className="container-fluid">
                 <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                     <div className="form-group row">
-                        <label for="name" className="col-sm-2 col-form-label">Name</label>
                         <Field label="Name" placeholder="Name" name="name" component={this.renderTextField} type="text"/>
                     </div>
                     <div className="form-group row">
-                        <label for="emailID" className="col-sm-2 col-form-label">Email ID</label>
-                        <Field name="emailID" component={this.renderEmailField}/>
+                        <Field name="emailID" placeholder="Email Address" component={this.renderEmailField}/>
                     </div>
                     <div className="form-group row">
-                        <label for="userName" className="col-sm-2 col-form-label">Username</label>
-                        <Field name="userName" component={this.renderTextField}/>
+                        <Field name="userName" placeholder="Username" component={this.renderTextField}/>
                     </div>
                     <div className="form-group row">
-                        <label for="password" className="col-sm-2 col-form-label">Password</label>
-                        <Field name="password" component={this.renderPasswordField}/>
+                        <Field name="password" placeholder="Password" component={this.renderPasswordField}/>
                     </div>
                     <div className="form-group row">
-                        <label for="confirmPassword" className="col-sm-2 col-form-label">Confirm Password</label>
-                        <Field name="confirmPassword" component={this.renderPasswordField}/>
+                        <Field name="confirmPassword" placeholder="Confirm Password" component={this.renderPasswordField}/>
                     </div>
                     <div className="form-group row">
-                        <label for="address" className="col-sm-2 col-form-label">Address</label>
-                        <Field name="address" component={this.renderTextArea}/>
+                        <Field name="address" placeholder="Address"  component={this.renderTextArea}/>
                     </div>
                     <div className="form-group row">
-                        <label for="mobile" className="col-sm-2 col-form-label">Mobile No</label>
-                        <Field name="mobile" component={this.renderTextField}/>
+                        <Field name="mobile" placeholder="Mobile No" component={this.renderTextField}/>
                     </div>
                     <div className="form-group row">
-                        <label for="type" className="col-sm-2 col-form-label">Type</label>
-                        <Field name="type" component={this.renderTypeSelect} onChange={this.onTypeChange}/>
+                        <Field name="type" placeholder="Type" component={this.renderTypeSelect} onChange={this.onTypeChange}/>
                     </div>
                     {
                         this._renderBuyerOrSellerForm()
@@ -108,7 +96,7 @@ class Registration extends Component {
     }
 
     _renderBuyerOrSellerForm() {
-        if (this.state.type == 0)
+        if (this.state.type === 0)
             return (
                 <div>
                     <div className="form-group row">
@@ -121,7 +109,7 @@ class Registration extends Component {
                     </div>
                 </div>
             )
-        if (this.state.type == 1)
+        if (this.state.type === 1)
             return (
                 <div>
                     <div className="form-group row">
