@@ -3,7 +3,7 @@ import {Field, reduxForm} from 'redux-form'
 import {register} from '../action/user_action'
 import {connect} from "react-redux";
 
-class NewRegistration extends Component {
+class Registration extends Component {
 
     constructor() {
         super();
@@ -141,4 +141,5 @@ class NewRegistration extends Component {
         this.setState({type: e.target.value});
     }
 }
-export default reduxForm({form: 'RegistrationForm'})(connect(null, {register})(NewRegistration));
+
+export default reduxForm({form: 'RegistrationForm'})(connect(null, {register})(Registration));
