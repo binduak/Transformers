@@ -63,7 +63,7 @@ class Registration extends Component {
 
     renderTypeSelect(field) {
         return <select className="form-control" required {...field.input}>
-            <option value="-1">--Select--</option>
+            <option value="-1">--Type--</option>
             <option value="0">Buyer</option>
             <option value="1">Seller</option>
         </select>
@@ -71,7 +71,7 @@ class Registration extends Component {
 
     renderGenderSelect(field) {
         return <div><select className="form-control" {...field.input}>
-            <option value="-1">--Select--</option>
+            <option value="-1">--Gender--</option>
             <option value="0">Male</option>
             <option value="1">Female</option>
         </select></div>
