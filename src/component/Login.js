@@ -44,7 +44,7 @@ export default class LoginModule extends Component {
     if(thisObj.state.isValid) {
       axios({
         method:'post',
-        url:'/login',
+        url:'/user/login',
         baseURL: 'http://10.136.22.124:8080',
         headers: {
           Accept: 'application/json',
@@ -62,23 +62,26 @@ export default class LoginModule extends Component {
           thisObj.setState({
             username: thisObj.state.username,
             password: thisObj.state.password,
-            errorMessage:response.data.data,
+            errorMessage:response.data.responseStatus,
             isValid : false
           });
+        } else {
+          localStorage.setItem("userData", {userId: 2});
+          thisObj.props.history.push('/buyer')
         }
+
         console.log(response);
       }).catch(function (error) {
 
         console.log(error);
       });
     }
-
   }
 
   render() {
     return (
           <form className="login-form">
-
+            <h4><b>Welcome To Tradeaway</b></h4>
             <div className={"alert alert-warning alert-dismissible fade " + (this.state.errorMessage ? 'show' : 'hidden')}  role="alert">
               <strong>{this.state.errorMessage}</strong>
             </div>
