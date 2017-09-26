@@ -66,8 +66,15 @@ export default class LoginModule extends Component {
             isValid : false
           });
         } else {
-          localStorage.setItem("userData", {userId: 2});
-          thisObj.props.history.push('/buyer')
+          console.log(response.data.data)
+          localStorage.setItem("userData", response.data.data);
+
+          if(response.data.data.buyer) {
+            thisObj.props.history.push('/buyer');
+          } else {
+            thisObj.props.history.push('/seller');
+          }
+
         }
 
         console.log(response);
