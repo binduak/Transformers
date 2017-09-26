@@ -16,8 +16,6 @@ export default class LoginModule extends Component {
     this.handleChangeUsername = this.handleChangeUsername.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.login = this.login.bind(this);
-    this.clearError = this.clearError.bind(this);
-
   }
 
   handleChangeUsername (event) {
@@ -38,22 +36,15 @@ export default class LoginModule extends Component {
     });
   }
 
-  clearError (event) {
-    this.setState({
-      username: this.state.username,
-      password: this.state.password,
-      errorMessage: "",
-      isValid: false
-    });
-  }
+  login(e) {
+    e.preventDefault();
 
-  login() {
     let thisObj = this;
 
     if(thisObj.state.isValid) {
       axios({
         method:'post',
-        url:'/login',
+        url:'/user/login',
         baseURL: 'http://10.136.22.124:8080',
         headers: {
           Accept: 'application/json',
@@ -66,36 +57,38 @@ export default class LoginModule extends Component {
             username: this.state.username,
             password: this.state.password
         }
-      })
-      .then(function (response) {
+      }).then(function (response) {
         if(response.data.responseCode > 0) {
           thisObj.setState({
             username: thisObj.state.username,
             password: thisObj.state.password,
-            errorMessage:response.data.data,
-            isValid : false,
+            errorMessage:response.data.responseStatus,
+            isValid : false
           });
+        } else {
+          localStorage.setItem("userData", {userId: 2});
+          thisObj.props.history.push('/buyer')
         }
+
         console.log(response);
-      })
-      .catch(function (error) {
+      }).catch(function (error) {
+
         console.log(error);
       });
     }
-
   }
 
   render() {
     return (
           <form className="login-form">
-              <h2 className="text-muted"> Registration</h2>
+            <h4 className="text-muted">Welcome To Tradeaway</h4>
             <div className={"alert alert-warning alert-dismissible fade " + (this.state.errorMessage ? 'show' : 'hidden')}  role="alert">
               <strong>{this.state.errorMessage}</strong>
             </div>
             <input type="text" placeholder="username" maxLength="50" onChange = {this.handleChangeUsername} required/>
             <input type="password" placeholder="password" maxLength="50" onChange = {this.handleChangePassword} required/>
             <button onClick={this.login}>login</button>
-            <p className="message">Not registered? <Link to="/register">Create an account</Link></p>
+            {<p className="message">Not registered? <Link to="/register">Create an account</Link></p> }
           </form>
     );
   }
