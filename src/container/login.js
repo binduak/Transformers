@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
+import {login} from '../action/user_action'
 import '../App.css';
 
-export default class LoginModule extends Component {
+class LoginModule extends Component {
   constructor() {
     super();
 
@@ -15,7 +17,7 @@ export default class LoginModule extends Component {
     }
     this.handleChangeUsername = this.handleChangeUsername.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.login = this.login.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChangeUsername (event) {
@@ -36,52 +38,23 @@ export default class LoginModule extends Component {
     });
   }
 
-  login(e) {
+  handleSubmit(e) {
     e.preventDefault();
-
-    let thisObj = this;
-
-    if(thisObj.state.isValid) {
-      axios({
-        method:'post',
-        url:'/user/login',
-        baseURL: 'http://localhost:8080',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        withCredentials: true,
-        credentials: 'same-origin',
-        responseType:'json',
-        data: {
-            username: this.state.username,
-            password: this.state.password
-        }
-      }).then(function (response) {
-          console.log(response.data.data)
+    if(this.state.isValid) {
+      this.props.login({
+          username: this.state.username,
+          password: this.state.password
+      }, (response) => {
         if(response.data.responseCode > 0) {
-          thisObj.setState({
-            username: thisObj.state.username,
-            password: thisObj.state.password,
+            this.setState({
+            username: this.state.username,
+            password: this.state.password,
             errorMessage:response.data.responseStatus,
             isValid : false
           });
         } else {
-
-          localStorage.setItem("userData", response.data.data);
-          console.log(response.data)
-          if(response.data.data.buyer) {
-            thisObj.props.history.push('/buyer');
-          } else {
-            thisObj.props.history.push('/seller');
-          }
-
+          this.props.history.push((response.data.data.buyer?'/buyer':'/seller'));
         }
-
-        console.log(response);
-      }).catch(function (error) {
-
-        console.log(error);
       });
     }
   }
@@ -95,9 +68,11 @@ export default class LoginModule extends Component {
             </div>
             <input type="text" placeholder="username" maxLength="50" onChange = {this.handleChangeUsername} required/>
             <input type="password" placeholder="password" maxLength="50" onChange = {this.handleChangePassword} required/>
-            <button onClick={this.login}>login</button>
+            <button onClick={this.handleSubmit}>login</button>
             {<p className="message">Not registered? <Link to="/register">Create an account</Link></p> }
           </form>
     );
   }
 }
+
+export default connect(null, {login})(LoginModule);

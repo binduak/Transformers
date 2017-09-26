@@ -1,9 +1,9 @@
-
-import {LOGIN_SUCCESS} from "../action/user_action";
+import {GET_PRODUCT_LIST} from "../action/product_action";
 
 export default (state={}, action) => {
+    console.log(action)
   switch(action){
-      case LOGIN_SUCCESS:
+      case GET_PRODUCT_LIST:
           return action.payload.data.data;
 
   }

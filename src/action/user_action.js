@@ -1,21 +1,20 @@
-import axios from "axios"
-import { SubmissionError } from 'redux-form'
-import * as browserHistory from "redux-form";
-let ROOT_URL = 'http://10.136.22.124:8080/'
-export function register(user){
-    console.log(user)
-    let url=`${ROOT_URL}user/`+ (user.type===0)?'registerBuyer':'registerSeller';
-    let response = axios.post(url, user);
-    response.then(
+import {post} from "./axios"
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 
-        () => {console.log("CHanging");browserHistory.arrayPush('/');}
-    ).catch((error) => {
-        console.log('error', error.response);
-        throw new SubmissionError({ _error: error.response.data});
-    })
-
+export function register(values, callback){
+    var response=post(('/user/' + ((values.type == 0) ? 'registerBuyer' : 'registerSeller')), values);
+    response.then(callback);
     return {
         type: 'REGISTER_USER',
+        payload: response
+    }
+}
+
+export function login(values, callback){
+    var response=post('/user/login', values);
+    response.then(callback);
+    return {
+        type: LOGIN_SUCCESS,
         payload: response
     }
 }

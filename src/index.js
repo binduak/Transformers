@@ -7,8 +7,8 @@ import ReduxPromise from 'redux-promise'
 
 import reducers from './reducer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Registration from "./component/registration";
-import Login from "./component/login";
+import Registration from "./container/registration";
+import Login from "./container/login";
 import BuyerHome from "./component/buyer_index";
 
 import './index.css';

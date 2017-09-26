@@ -3,8 +3,12 @@
  */
 import { combineReducers } from 'redux';
 import { reducer as FormReducer} from 'redux-form'
+import UserReducer from "./user_reducer"
+import ProductReducer from "./product_reducer"
 const rootReducer = combineReducers({
-    form: FormReducer
+    form: FormReducer,
+    user: UserReducer,
+    products:ProductReducer
 });
 
 export default rootReducer;

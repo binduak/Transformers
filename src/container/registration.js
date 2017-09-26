@@ -2,14 +2,11 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form'
 import {register} from '../action/user_action'
 import {connect} from "react-redux";
-
-import axios from "axios"
-import"../css/registration.css"
 import {
     DateComponent,
     EmailComponent, GenderComponent, PasswordComponent, TextAreaComponent, TextComponent,
     TypeComponent
-} from "./input/input";
+} from "../component/input";
 
 class Registration extends Component {
 
@@ -25,19 +22,7 @@ class Registration extends Component {
     }
 
     onSubmit(values) {
-        axios({
-            method: 'post',
-            url: '/user/' + ((values.type == 0) ? 'registerBuyer' : 'registerSeller'),
-            baseURL: 'http://localhost:8080',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            withCredentials: true,
-            credentials: 'same-origin',
-            responseType: 'json',
-            data: values
-        }).then(this.handleRegistrationResponse);
+        this.props.register(values, this.handleRegistrationResponse)
     }
 
     render() {
