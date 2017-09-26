@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46419631-2ee4-4dac-aed9-26d94625ac18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/component/input/input.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/registration.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/registration.js" afterPath="$PROJECT_DIR$/src/component/registration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/seller_index.js" afterPath="$PROJECT_DIR$/src/component/seller_index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -102,10 +97,12 @@
       <file leaf-file-name="buyer_index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/buyer_index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="716">
+              <caret line="69" column="28" lean-forward="false" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+                <marker date="1506438714000" expanded="true" signature="138:197" ph="{...}" />
+                <marker date="1506438714000" expanded="true" signature="170:197" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -301,12 +298,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506318284382</updated>
-      <workItem from="1506318285483" duration="38803000" />
+      <workItem from="1506318285483" duration="38995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38803000" />
+    <option name="totallyTimeSpent" value="38995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -506,10 +503,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/buyer_index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="716">
+          <caret line="69" column="28" lean-forward="false" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1506438714000" expanded="true" signature="138:197" ph="{...}" />
+            <marker date="1506438714000" expanded="true" signature="170:197" ph="{...}" />
           </folding>
         </state>
       </provider>
