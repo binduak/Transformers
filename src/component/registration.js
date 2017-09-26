@@ -149,7 +149,7 @@ class Registration extends Component {
 
     handleRegistrationResponse(response) {
         console.log(response.data.responseStatus == "Sucess")
-        if (response.data.responseStatus == "Sucess") {
+        if (response.data.responseStatus == "Success") {
             this.props.history.push("/");
         } else {
             this.setState({type: this.state.type, errorMessage: response.data.responseStatus})

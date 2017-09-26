@@ -10,7 +10,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Registration from "./component/registration";
 import Login from "./component/login";
 import BuyerHome from "./component/buyer_index";
-import SellerHome from "./component/seller_index";
 
 import './index.css';
 
@@ -24,7 +23,6 @@ ReactDOM.render(
           <BrowserRouter>
                <Switch>
                  <Route path="/buyer" component = {BuyerHome}/>
-                 <Route path="/seller" component = {SellerHome}/>
                  <Route path="/register" component={Registration} />
                  <Route path="/" component={Login} />
               </Switch>

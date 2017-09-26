@@ -58,6 +58,7 @@ export default class LoginModule extends Component {
             password: this.state.password
         }
       }).then(function (response) {
+          console.log(response.data.data)
         if(response.data.responseCode > 0) {
           thisObj.setState({
             username: thisObj.state.username,
@@ -66,9 +67,9 @@ export default class LoginModule extends Component {
             isValid : false
           });
         } else {
-          console.log(response.data.data)
-          localStorage.setItem("userData", response.data.data);
 
+          localStorage.setItem("userData", response.data.data);
+          console.log(response.data)
           if(response.data.data.buyer) {
             thisObj.props.history.push('/buyer');
           } else {
