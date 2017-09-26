@@ -26,7 +26,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
-  width: 360px;
+  width: 600px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -34,7 +34,7 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
+  max-width: 600px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
@@ -132,4 +132,6 @@ select.form-control, textarea.form-control{
   border:0px;
   font-family: "Roboto", sans-serif;
   margin-bottom: 15px;
+  font-size:15px;
+  padding:15px
 }

@@ -4,7 +4,12 @@ import {register} from '../action/user_action'
 import {connect} from "react-redux";
 
 import axios from "axios"
-const  { DOM: { input, select, textarea } } = React
+import"../css/registration.css"
+import {
+    DateComponent,
+    EmailComponent, GenderComponent, PasswordComponent, TextAreaComponent, TextComponent,
+    TypeComponent
+} from "./input/input";
 
 class Registration extends Component {
 
@@ -33,50 +38,7 @@ class Registration extends Component {
             responseType: 'json',
             data: values
         }).then(this.handleRegistrationResponse);
-
-
     }
-
-    renderExpField(field) {
-        return <input type="text" placeholder={field.placeholder} className="form-control" required {...field.input} />
-    }
-
-    renderEmailField(field) {
-        return <input type="email" placeholder={field.placeholder} className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                            required {...field.input} />
-    }
-
-    renderPasswordField(field) {
-        return <input type="password" placeholder={field.placeholder} className="form-control" pattern=".{8,}" required {...field.input} />
-    }
-
-    renderTextField(field) {
-        return <input type="text" placeholder={field.placeholder} className="form-control" required {...field.input} />
-    }
-    renderDateField(field) {
-        return <input type="date" placeholder={field.placeholder} className="form-control" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required {...field.input} />
-    }
-
-    renderTextArea(field) {
-        return <textarea placeholder={field.placeholder} className="form-control" required  {...field.input} />
-    }
-
-    renderTypeSelect(field) {
-        return <select className="form-control" required {...field.input}>
-            <option value="-1">--Type--</option>
-            <option value="0">Buyer</option>
-            <option value="1">Seller</option>
-        </select>
-    }
-
-    renderGenderSelect(field) {
-        return <div><select className="form-control" {...field.input}>
-            <option value="-1">--Gender--</option>
-            <option value="0">Male</option>
-            <option value="1">Female</option>
-        </select></div>
-    }
-
 
     render() {
         return (
@@ -84,28 +46,28 @@ class Registration extends Component {
                 <h4 className="text-muted"> Registration</h4><br/>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                     <div className="form-group row">
-                        <Field label="Name" placeholder="Name" name="name" component={this.renderTextField} type="text"/>
+                        <TextComponent label="Name" placeholder="Name" name="name"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="emailId" placeholder="Email Address" component={this.renderEmailField}/>
+                        <EmailComponent name="emailId" placeholder="Email Address"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="username" placeholder="Username" component={this.renderTextField}/>
+                        <TextComponent name="username" placeholder="Username"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="password" placeholder="Password" component={this.renderPasswordField}/>
+                        <PasswordComponent name="password" placeholder="Password"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="confirmPassword" placeholder="Confirm Password" component={this.renderPasswordField}/>
+                        <PasswordComponent name="confirmPassword" placeholder="Confirm Password"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="address" placeholder="Address"  component={this.renderTextArea}/>
+                        <TextAreaComponent name="address" placeholder="Address"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="mobileNumber" placeholder="Mobile No" component={this.renderTextField}/>
+                        <TextComponent name="mobileNumber" placeholder="Mobile No" />
                     </div>
                     <div className="form-group row">
-                        <Field name="type" placeholder="Type" component={this.renderTypeSelect} onChange={this.onTypeChange}/>
+                        <TypeComponent name="type" placeholder="Type" onChange={this.onTypeChange}/>
                     </div>
                     {
                         this._renderBuyerOrSellerForm()
@@ -122,10 +84,10 @@ class Registration extends Component {
             return (
                 <div>
                     <div className="form-group row">
-                        <Field name="gender" placeholder="Gender" component={this.renderGenderSelect}/>
+                        <GenderComponent name="gender" placeholder="Gender"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="dateOfBirth" placeholder="Date Of Birth (YYY-MM-DD)"  component={this.renderDateField}/>
+                        <DateComponent name="dateOfBirth" placeholder="Date Of Birth (YYY-MM-DD)" />
                     </div>
                 </div>
             )
@@ -133,11 +95,11 @@ class Registration extends Component {
             return (
                 <div>
                     <div className="form-group row">
-                        <Field name="panCardNo" placeholder="Pan Number" component={this.renderTextField}/>
+                        <TextComponent name="panCardNo" placeholder="Pan Number"/>
                     </div>
                     <div className="form-group row">
-                        <Field name="experienceYears" placeholder="Experience(Years)"component={this.renderExpField}/>&nbsp;
-                        <Field name="experienceMonths" placeholder="Experience(Months)" component={this.renderExpField}/>&nbsp;
+                        <TextComponent name="experienceYears" placeholder="Experience(Years)"/>&nbsp;
+                        <TextComponent name="experienceMonths" placeholder="Experience(Months)"/>&nbsp;
                     </div>
                 </div>
             )
