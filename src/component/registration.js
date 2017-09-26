@@ -2,20 +2,37 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form'
 import {register} from '../action/user_action'
 import {connect} from "react-redux";
+import axios from "axios"
 
 class Registration extends Component {
 
     constructor() {
         super();
-        this.state = {type: -1}
+        this.state = {
+            type: -1,
+            errorMessage: ""
+        }
         this.onSubmit = this.onSubmit.bind(this);
         this.onTypeChange = this.onTypeChange.bind(this);
+        this.handleRegistrationResponse = this.handleRegistrationResponse.bind(this);
     }
 
     onSubmit(values) {
+        axios({
+            method: 'post',
+            url: '/user/' + ((values.type == 0) ? 'registerBuyer' : 'registerSeller'),
+            baseURL: 'http://localhost:8080',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            withCredentials: true,
+            credentials: 'same-origin',
+            responseType: 'json',
+            data: values
+        }).then(this.handleRegistrationResponse);
 
-        this.props.history.push('/')
-        this.props.register(values);
+
     }
 
     renderExpField(field) {
@@ -35,7 +52,6 @@ class Registration extends Component {
     }
 
     renderTextField(field) {
-        console.log(field);
         return <span><input type="text" className="form-control" required {...field.input} />
         </span>
     }
@@ -65,18 +81,20 @@ class Registration extends Component {
     render() {
         return (
             <div className="container-fluid">
+                <h2 className="text-muted"> Registration</h2>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                     <div className="form-group row">
                         <label for="name" className="col-sm-2 col-form-label">Name</label>
-                        <Field label="Name" placeholder="Name" name="name" component={this.renderTextField} type="text"/>
+                        <Field label="Name" placeholder="Name" name="name" component={this.renderTextField}
+                               type="text"/>
                     </div>
                     <div className="form-group row">
                         <label for="emailID" className="col-sm-2 col-form-label">Email ID</label>
-                        <Field name="emailID" component={this.renderEmailField}/>
+                        <Field name="emailId" component={this.renderEmailField}/>
                     </div>
                     <div className="form-group row">
                         <label for="userName" className="col-sm-2 col-form-label">Username</label>
-                        <Field name="userName" component={this.renderTextField}/>
+                        <Field name="username" component={this.renderTextField}/>
                     </div>
                     <div className="form-group row">
                         <label for="password" className="col-sm-2 col-form-label">Password</label>
@@ -92,7 +110,7 @@ class Registration extends Component {
                     </div>
                     <div className="form-group row">
                         <label for="mobile" className="col-sm-2 col-form-label">Mobile No</label>
-                        <Field name="mobile" component={this.renderTextField}/>
+                        <Field name="mobileNumber" component={this.renderTextField}/>
                     </div>
                     <div className="form-group row">
                         <label for="type" className="col-sm-2 col-form-label">Type</label>
@@ -101,6 +119,7 @@ class Registration extends Component {
                     {
                         this._renderBuyerOrSellerForm()
                     }
+                    {this.state.errorMessage}
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -126,7 +145,7 @@ class Registration extends Component {
                 <div>
                     <div className="form-group row">
                         <label for="panNo" className="col-sm-2 col-form-label">Pan Number</label>
-                        <Field name="panNo" component={this.renderTextField}/>
+                        <Field name="panCardNo" component={this.renderTextField}/>
                     </div>
                     <div className="form-group row">
                         <label for="experience" className="col-sm-2 col-form-label">Experience</label>
@@ -138,7 +157,17 @@ class Registration extends Component {
     }
 
     onTypeChange(e) {
-        this.setState({type: e.target.value});
+        this.setState({type: e.target.value, errorMessage: ""});
+    }
+
+    handleRegistrationResponse(response) {
+        console.log(response.data.responseStatus == "Sucess")
+        if (response.data.responseStatus == "Sucess") {
+            this.props.history.push("/");
+        } else {
+            this.setState({type: this.state.type, errorMessage: response.data.responseStatus})
+        }
+        return response;
     }
 }
 

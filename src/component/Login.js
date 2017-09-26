@@ -88,7 +88,7 @@ export default class LoginModule extends Component {
   render() {
     return (
           <form className="login-form">
-
+              <h2 className="text-muted"> Registration</h2>
             <div className={"alert alert-warning alert-dismissible fade " + (this.state.errorMessage ? 'show' : 'hidden')}  role="alert">
               <strong>{this.state.errorMessage}</strong>
             </div>
