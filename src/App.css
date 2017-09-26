@@ -127,7 +127,7 @@ body {
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css);
 
 select.form-control, textarea.form-control{
-  width: 270px;
+  width: 510px;
   background: #f2f2f2;
   border:0px;
   font-family: "Roboto", sans-serif;

@@ -54,9 +54,7 @@ class Registration extends Component {
                     <div className="form-group row">
                         <TypeComponent name="type" placeholder="Type" onChange={this.onTypeChange}/>
                     </div>
-                    {
-                        this._renderBuyerOrSellerForm()
-                    }
+                    {this._renderBuyerOrSellerForm()}
                     {this.state.errorMessage}
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>

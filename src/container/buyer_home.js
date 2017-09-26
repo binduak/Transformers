@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {getCategoryList} from "../action/category_action";
 import {getProductList} from "../action/product_action";
+import {Link} from "react-router-dom";
 
 class BuyerHome extends Component {
     constructor() {
@@ -29,8 +30,9 @@ class BuyerHome extends Component {
 
     render() {
         return (<div>
-            <h1> Landing Page-Buyer {this.props.user.name}</h1>
-            <h3> Welcome </h3>
+            <h1> Landing Page-Buyer</h1>
+            <h3> Welcome {this.props.user.name}</h3>
+            <Link to="/">Log out</Link>
             <lable className=""> Category</lable>
             <select className="form-control" onChange={this.getProductsList}>
                 <option value="-1">--Select--</option>

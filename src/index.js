@@ -10,6 +10,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Registration from "./container/registration";
 import Login from "./container/login";
 import BuyerHome from "./container/buyer_home";
+import SellerHome from "./container/seller/seller_home";
+import AddItem from "./container/seller/seller_add_item";
 
 import './index.css';
 
@@ -23,6 +25,8 @@ ReactDOM.render(
           <BrowserRouter>
                <Switch>
                  <Route path="/buyer" component = {BuyerHome}/>
+                 <Route path="/seller/addItem" component = {AddItem}/>
+                 <Route path="/seller" component = {SellerHome}/>
                  <Route path="/register" component={Registration} />
                  <Route path="/" component={Login} />
               </Switch>
