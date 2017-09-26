@@ -45,7 +45,7 @@ export default class LoginModule extends Component {
       axios({
         method:'post',
         url:'/user/login',
-        baseURL: 'http://10.136.22.124:8080',
+        baseURL: 'http://localhost:8080',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json'

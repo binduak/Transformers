@@ -115,30 +115,26 @@ class Registration extends Component {
     }
 
     _renderBuyerOrSellerForm() {
-        if (this.state.type === 0)
+        if (this.state.type == 0)
             return (
                 <div>
                     <div className="form-group row">
-                        <label for="gender" className="col-sm-2 col-form-label">Gender</label>
-                        <Field name="gender" component={this.renderGenderSelect}/>
+                        <Field name="gender" placeholder="Gender" component={this.renderGenderSelect}/>
                     </div>
                     <div className="form-group row">
-                        <label for="dateOfBirth" className="col-sm-2 col-form-label">Date Of Birth</label>
-                        <Field name="dateOfBirth" component={this.renderTextField}/>
+                        <Field name="dateOfBirth" placeholder="Date Of Birth" component={this.renderTextField}/>
                     </div>
                 </div>
             )
-        if (this.state.type === 1)
+        if (this.state.type == 1)
             return (
                 <div>
                     <div className="form-group row">
-                        <label for="panNo" className="col-sm-2 col-form-label">Pan Number</label>
-                        <Field name="panCardNo" component={this.renderTextField}/>
+                        <Field name="panCardNo" placeholder="Pan Number" component={this.renderTextField}/>
                     </div>
                     <div className="form-group row">
-                        <label for="experience" className="col-sm-2 col-form-label">Experience</label>
-                        <Field name="experienceYears" component={this.renderExpField}/>&nbsp;Years&nbsp;
-                        <Field name="experienceMonths" component={this.renderExpField}/>&nbsp;Months
+                        <Field name="experienceYears" placeholder="Experience(Years)"component={this.renderExpField}/>&nbsp;
+                        <Field name="experienceMonths" placeholder="Experience(Months)" component={this.renderExpField}/>&nbsp;
                     </div>
                 </div>
             )
