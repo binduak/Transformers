@@ -53,6 +53,7 @@ class LoginModule extends Component {
             isValid : false
           });
         } else {
+            console.log("After",this.props.user)
           this.props.history.push((response.data.data.buyer?'/buyer':'/seller'));
         }
       });
@@ -74,5 +75,7 @@ class LoginModule extends Component {
     );
   }
 }
-
-export default connect(null, {login})(LoginModule);
+function mapStateToProps({user}) {
+    return {user};
+}
+export default connect(mapStateToProps, {login})(LoginModule);

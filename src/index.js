@@ -9,7 +9,7 @@ import reducers from './reducer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Registration from "./container/registration";
 import Login from "./container/login";
-import BuyerHome from "./component/buyer_index";
+import BuyerHome from "./container/buyer_home";
 
 import './index.css';
 

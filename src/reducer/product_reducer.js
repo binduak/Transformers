@@ -1,8 +1,7 @@
 import {GET_PRODUCT_LIST} from "../action/product_action";
 
 export default (state={}, action) => {
-    console.log(action)
-  switch(action){
+  switch(action.type){
       case GET_PRODUCT_LIST:
           return action.payload.data.data;
 

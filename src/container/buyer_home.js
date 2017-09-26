@@ -14,7 +14,7 @@ class BuyerHome extends Component {
     }
 
     componentWillMount() {
-        this.props.getCategoryList((response) => {console.log(response.data); this.setState({listOfCategories: response.data.data})})
+        this.props.getCategoryList((response) => {console.log(this.props.user.name); console.log(response.data); this.setState({listOfCategories: response.data.data})})
     }
 
     getProductsList(e) {
@@ -29,7 +29,7 @@ class BuyerHome extends Component {
 
     render() {
         return (<div>
-            <h1> Landing Page-Buyer</h1>
+            <h1> Landing Page-Buyer {this.props.user.name}</h1>
             <h3> Welcome </h3>
             <lable className=""> Category</lable>
             <select className="form-control" onChange={this.getProductsList}>
@@ -44,7 +44,7 @@ class BuyerHome extends Component {
     }
 }
 
-function mapStateToProps({weather}) {
-    return {weather};
+function mapStateToProps({user, products}) {
+    return {user, products};
 }
 export default connect(mapStateToProps, {getCategoryList, getProductList})(BuyerHome);
