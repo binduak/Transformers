@@ -53,6 +53,9 @@ class Registration extends Component {
     renderTextField(field) {
         return <input type="text" placeholder={field.placeholder} className="form-control" required {...field.input} />
     }
+    renderDateField(field) {
+        return <input type="date" placeholder={field.placeholder} className="form-control" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required {...field.input} />
+    }
 
     renderTextArea(field) {
         return <textarea placeholder={field.placeholder} className="form-control" required  {...field.input} />
@@ -122,7 +125,7 @@ class Registration extends Component {
                         <Field name="gender" placeholder="Gender" component={this.renderGenderSelect}/>
                     </div>
                     <div className="form-group row">
-                        <Field name="dateOfBirth" placeholder="Date Of Birth" component={this.renderTextField}/>
+                        <Field name="dateOfBirth" placeholder="Date Of Birth (YYY-MM-DD)"  component={this.renderDateField}/>
                     </div>
                 </div>
             )
