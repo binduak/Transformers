@@ -20,8 +20,8 @@ class AddItem extends Component {
             values.categoryName = JSON.parse(values.category).categoryName;
         }
         console.log(this.props.user)
-        values.sellerId = this.props.user.id;
-        values.sellerUsername = this.props.user.name;
+        values.sellerId = this.props.user.userTypeId;
+        values.sellerUsername = this.props.user.username;
         delete values.category
         console.log(values);
         this.props.addItem(values, () => {
