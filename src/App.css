@@ -128,10 +128,19 @@ body {
 
 select.form-control, textarea.form-control{
   width: 510px;
-  background: #f2f2f2;
+  background: #f2f2f2 !important;
   border:0px;
   font-family: "Roboto", sans-serif;
   margin-bottom: 15px;
   font-size:15px;
   padding:15px
+}
+select.form-control:active, select.form-control:hover, select.form-control:link, select.form-control:checked{
+  background: #f2f2f2;
+}
+img.card-img-top{
+  padding-left: 20px;
+}
+h6.card-title{
+  min-height: 100px;
 }

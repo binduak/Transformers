@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {getCategoryList} from "../action/category_action";
 import {getItemsList} from "../action/item_action";
 import {Link} from "react-router-dom";
-import ProductList from "../component/product_list";
+import ProductList from "../component/item";
 
 class BuyerHome extends Component {
     constructor() {
@@ -56,7 +56,6 @@ class BuyerHome extends Component {
 }
 
 function mapStateToProps({user, items}) {
-    console.log(user, items,"user, item");
     return {user, items};
 }
 export default connect(mapStateToProps, {getCategoryList,getItemsList})(BuyerHome);

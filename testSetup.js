@@ -1,7 +1,8 @@
 'use strict';
 
 import jsdom from 'jsdom';
-
+import {configure} from "enzyme";
+import Adapter from 'enzyme-adapter-react-15';
 global.document = jsdom.jsdom('<html><body></body></html>');
 global.window = document.defaultView;
 global.navigator = window.navigator;
@@ -13,3 +14,5 @@ function noop() {
 // prevent mocha tests from breaking when trying to require a css file
 require.extensions['.css'] = noop;
 require.extensions['.svg'] = noop;
+
+configure({ adapter: new Adapter() })

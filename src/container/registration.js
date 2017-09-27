@@ -55,7 +55,7 @@ class Registration extends Component {
                         <TypeComponent name="type" placeholder="Type" onChange={this.onTypeChange}/>
                     </div>
                     {this._renderBuyerOrSellerForm()}
-                    {this.state.errorMessage}
+                    <span className="text-error"> {this.state.errorMessage}</span>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -93,7 +93,6 @@ class Registration extends Component {
     }
 
     handleRegistrationResponse(response) {
-        console.log(response.data.responseStatus == "Sucess")
         if (response.data.responseStatus == "Success") {
             this.props.history.push("/");
         } else {
