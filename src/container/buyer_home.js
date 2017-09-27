@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {getCategoryList} from "../action/category_action";
-import {getProductList} from "../action/product_action";
+import {getItemList} from "../action/item_action";
 import {Link} from "react-router-dom";
 
 class BuyerHome extends Component {
@@ -11,18 +11,18 @@ class BuyerHome extends Component {
             listOfCategories: [],
             categoryId: -1
         };
-        this.getProductsList = this.getProductsList.bind(this);
+        this.getItemsList = this.getItemsList.bind(this);
     }
 
     componentWillMount() {
         this.props.getCategoryList((response) => {console.log(this.props.user.name); console.log(response.data); this.setState({listOfCategories: response.data.data})})
     }
 
-    getProductsList(e) {
+    getItemsList(e) {
         this.setState({categoryId: e.target.value});
-        this.props.getProductList(e.target.value, (response)=>{console.log(response.data)})
+        this.props.getItemsList(e.target.value, (response)=>{console.log(response.data)})
         return (<div>
-            {this.props.products.map((cat, index) => {
+            {this.props.items.map((cat, index) => {
                 return {cat}
             })}
         </div>)
@@ -34,7 +34,7 @@ class BuyerHome extends Component {
             <h3> Welcome {this.props.user.name}</h3>
             <Link to="/">Log out</Link>
             <lable className=""> Category</lable>
-            <select className="form-control" onChange={this.getProductsList}>
+            <select className="form-control" onChange={this.getItemsList}>
                 <option value="-1">--Select--</option>
                 {this.state.listOfCategories.map((cat, index) => {
                     return (<option key={index} value={cat.categoryId}> {cat.categoryName} </option>)
@@ -46,7 +46,7 @@ class BuyerHome extends Component {
     }
 }
 
-function mapStateToProps({user, products}) {
-    return {user, products};
+function mapStateToProps({user, items}) {
+    return {user, items};
 }
-export default connect(mapStateToProps, {getCategoryList, getProductList})(BuyerHome);
+export default connect(mapStateToProps, {getCategoryList,getItemList})(BuyerHome);

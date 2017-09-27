@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form'
 import {connect} from "react-redux";
 import {TextAreaComponent, TextComponent} from "../../component/input";
-import {addProduct} from "../../action/product_action";
+import {addItem} from "../../action/item_action";
 import CategoryComponent from "./CategorySelect";
 
 class AddItem extends Component {
@@ -20,7 +20,7 @@ class AddItem extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <h4 className="text-muted"> Registration</h4><br/>
+                <h4 className="text-muted">Add Item</h4><br/>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                     <div className="form-group row">
                         <TextComponent label="Name" placeholder="Name" name="name"/>
@@ -47,4 +47,4 @@ class AddItem extends Component {
     }
 }
 
-export default reduxForm({form: 'AddItem'})(connect(null, {addProduct})(AddItem));
+export default reduxForm({form: 'AddItem'})(connect(null, {addProduct: addItem})(AddItem));

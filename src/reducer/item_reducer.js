@@ -1,8 +1,8 @@
-import {GET_PRODUCT_LIST} from "../action/product_action";
+import {GET_ITEM_LIST} from "../action/item_action";
 
 export default (state={}, action) => {
   switch(action.type){
-      case GET_PRODUCT_LIST:
+      case GET_ITEM_LIST:
           return action.payload.data.data;
 
   }
