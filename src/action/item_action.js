@@ -2,8 +2,8 @@ import {get, post} from "./axios"
 export const GET_ITEM_LIST = "GET_ITEM_LIST";
 export const ADD_ITEM = "ADD_ITEM";
 
-export function getItemList(categoryId, callback){
-    var response=get(`/category/${categoryId}`, {});
+export function getItemsList(categoryId, categoryName, callback){
+    var response=get(`/items?categoryId=${categoryId}&categoryName=${categoryName}`, {});
     response.then(callback);
     return {
         type: GET_ITEM_LIST,
@@ -12,7 +12,7 @@ export function getItemList(categoryId, callback){
 }
 
 export function addItem(values){
-    var response=post(`/item`, values);
+    var response=post(`/items`, values);
     return {
         type: ADD_ITEM,
         payload: response

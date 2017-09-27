@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {getCategoryList} from "../action/category_action";
-import {getItemList} from "../action/item_action";
+import {getItemsList} from "../action/item_action";
 import {Link} from "react-router-dom";
 
 class BuyerHome extends Component {
@@ -19,12 +19,10 @@ class BuyerHome extends Component {
     }
 
     getItemsList(e) {
-        this.setState({categoryId: e.target.value});
-        this.props.getItemsList(e.target.value, (response)=>{console.log(response.data)})
+        this.setState({categoryId: JSON.parse(e.target.value).categoryId});
+        this.props.getItemsList(JSON.parse(e.target.value).categoryId, JSON.parse(e.target.value).categoryName, (response)=>{console.log(response.data)})
         return (<div>
-            {this.props.items.map((cat, index) => {
-                return {cat}
-            })}
+            {console.log("",this.props.items)}
         </div>)
     }
 
@@ -37,7 +35,7 @@ class BuyerHome extends Component {
             <select className="form-control" onChange={this.getItemsList}>
                 <option value="-1">--Select--</option>
                 {this.state.listOfCategories.map((cat, index) => {
-                    return (<option key={index} value={cat.categoryId}> {cat.categoryName} </option>)
+                    return (<option key={index} value={JSON.stringify({categoryId:cat.categoryId, categoryName: cat.categoryName})}>{cat.categoryName}</option>)
                 })
                 }
             </select>
@@ -49,4 +47,4 @@ class BuyerHome extends Component {
 function mapStateToProps({user, items}) {
     return {user, items};
 }
-export default connect(mapStateToProps, {getCategoryList,getItemList})(BuyerHome);
+export default connect(mapStateToProps, {getCategoryList,getItemsList})(BuyerHome);
