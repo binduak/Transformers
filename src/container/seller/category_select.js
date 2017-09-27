@@ -12,7 +12,7 @@ class CategoryComponent extends Component {
     }
 
     componentWillMount() {
-        this.props.getCategoryList((response) => {console.log(response.data); this.setState({listOfCategories: response.data.data})})
+        this.props.getCategoryList((response) => {this.setState({listOfCategories: response.data.data})})
     }
 
     render() {
@@ -22,7 +22,7 @@ class CategoryComponent extends Component {
                 <option value="-1">--Category--</option>
                 {
                     this.state.listOfCategories.map((cat, index) => {
-                        return (<option key={index} value={cat.categoryId}> {cat.categoryName} </option>)
+                        return (<option key={index} value={JSON.stringify({categoryId:cat.categoryId, categoryName: cat.categoryName})}> {cat.categoryName} </option>)
                     })
                 }
             </select></div>
