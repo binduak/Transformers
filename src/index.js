@@ -12,6 +12,7 @@ import Login from "./container/login";
 import BuyerHome from "./container/buyer_home";
 import SellerHome from "./container/seller/seller_home";
 import AddItem from "./container/seller/seller_add_item";
+import Checkout from "./component/checkout";
 
 import './index.css';
 
@@ -28,6 +29,7 @@ ReactDOM.render(
                  <Route path="/seller/addItem" component = {AddItem}/>
                  <Route path="/seller" component = {SellerHome}/>
                  <Route path="/register" component={Registration} />
+                 <Route path="/checkout" component={Checkout} />
                  <Route path="/" component={Login} />
               </Switch>
           </BrowserRouter>

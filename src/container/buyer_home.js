@@ -3,13 +3,15 @@ import {connect} from "react-redux";
 import {getCategoryList} from "../action/category_action";
 import {getItemsList} from "../action/item_action";
 import {Link} from "react-router-dom";
+import ProductList from "../component/product_list";
 
 class BuyerHome extends Component {
     constructor() {
         super();
         this.state = {
             listOfCategories: [],
-            categoryId: -1
+            categoryId: -1,
+            listOfItems: []
         };
         this.getItemsList = this.getItemsList.bind(this);
     }
@@ -19,11 +21,15 @@ class BuyerHome extends Component {
     }
 
     getItemsList(e) {
+        console.log(this.props.user,"this.props.user");
         this.setState({categoryId: JSON.parse(e.target.value).categoryId});
-        this.props.getItemsList(JSON.parse(e.target.value).categoryId, JSON.parse(e.target.value).categoryName, (response)=>{console.log(response.data)})
-        return (<div>
-            {console.log("",this.props.items)}
-        </div>)
+        this.props.getItemsList(
+            JSON.parse(e.target.value).categoryId,
+            JSON.parse(e.target.value).categoryName,
+            (response)=> {
+                console.log("response.data",response.data)
+            }
+        )
     }
 
     render() {
@@ -40,11 +46,16 @@ class BuyerHome extends Component {
                 }
             </select>
 
+            {
+            this.props.items.map((item,index) => {
+                return <ProductList key={index} item={item}/>
+            })}
         </div>);
     }
 }
 
 function mapStateToProps({user, items}) {
+    console.log(user, items,"user, item");
     return {user, items};
 }
 export default connect(mapStateToProps, {getCategoryList,getItemsList})(BuyerHome);
