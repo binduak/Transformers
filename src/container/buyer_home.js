@@ -45,11 +45,12 @@ class BuyerHome extends Component {
                 })
                 }
             </select>
-
+            <div class="card-group">
             {
             this.props.items.map((item,index) => {
                 return <ProductList key={index} item={item}/>
             })}
+            </div>
         </div>);
     }
 }
