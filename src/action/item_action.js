@@ -11,8 +11,9 @@ export function getItemsList(categoryId, categoryName, callback){
     }
 }
 
-export function addItem(values){
+export function addItem(values, callback){
     var response=post(`/items`, values);
+    response.then(callback);
     return {
         type: ADD_ITEM,
         payload: response

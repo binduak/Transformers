@@ -15,6 +15,7 @@ import AddItem from "./container/seller/seller_add_item";
 import Checkout from "./component/checkout";
 
 import './index.css';
+import './App.css';
 
 const createStoreWithMiddleware = compose(applyMiddleware(ReduxPromise)(createStore));
 
