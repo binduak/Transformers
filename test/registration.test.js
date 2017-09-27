@@ -9,7 +9,6 @@ import {
     EmailComponent, GenderComponent, PasswordComponent, TextAreaComponent, TextComponent,
     TypeComponent
 } from "../src/component/input";
-import {describe} from "nyc";
 
 describe("Login Form", () => {
 
@@ -84,5 +83,6 @@ describe("Login Form", () => {
 
         expect(wrapper.find(".text-error").text()).to.equals(" ")
     });
+
 
 });
