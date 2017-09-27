@@ -18,12 +18,12 @@ export default class ProductList extends Component {
 
     render() {
         return (
-            <div class="card">
-                <img class="card-img-top" src={this.props.item.imageURL} alt={this.props.item.name} width="150px" height="250px"/>
-                    <div class="card-block">
-                        <h4 class="card-title">{this.props.item.name}</h4>
-                        <p class="card-text">Rs.{this.props.item.price}</p>
-                        <p class="card-text"><Link className="item_add single-item hvr-outline-out button2" to="/checkout" onClick={this.toCheckout}>Buy</Link></p>
+            <div className="card">
+                <img className="card-img-top" src={this.props.item.imageURL} alt={this.props.item.name} width="150px" height="250px"/>
+                    <div className="card-block">
+                        <h4 className="card-title">{this.props.item.name}</h4>
+                        <p className="card-text">Rs.{this.props.item.price}</p>
+                        <p className="card-text"><Link className="item_add single-item hvr-outline-out button2" to="/checkout" onClick={this.toCheckout}>Buy</Link></p>
                     </div>
             </div>
 

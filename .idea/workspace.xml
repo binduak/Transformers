@@ -2,88 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46419631-2ee4-4dac-aed9-26d94625ac18" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/a8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/b15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/b16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/b17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/b18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ba1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ba2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ba3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/baa1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/baa2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/baa3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/btn_next.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/btn_pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/btn_play.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/btn_prev.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/close_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/coupons.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/d1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/d2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/d3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/d4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/dig.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/e1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/e2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/e4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ep1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ep2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ep3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ep4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/g1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/g2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/g3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/icons1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/img-sp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/levis1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/logo3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/mark1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/men1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/men11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/men2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/men21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/men3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/men31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/mw1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/mw2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/mw3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/new2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/new3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/new4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/p1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/p2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/p4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ph1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ph2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ph3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/ph4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/tick-mark1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/w1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/w2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/w3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/w4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/watch.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/wed1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/wed2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/woo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/woo1.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/product_list.js" afterPath="$PROJECT_DIR$/src/component/product_list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/buyer_home.js" afterPath="$PROJECT_DIR$/src/container/buyer_home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.css" afterPath="$PROJECT_DIR$/src/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -152,21 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buyer_home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="buyer_home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/container/buyer_home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+            <state relative-caret-position="121">
+              <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_list.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/product_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="21" column="108" lean-forward="false" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
+            <state relative-caret-position="106">
+              <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="16" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -210,12 +130,14 @@
       <find>products</find>
       <find>getItemList</find>
       <find>images/</find>
+      <find>class=</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
       <replace>/&gt;</replace>
       <replace>TextComponent</replace>
       <replace>getItemsList</replace>
+      <replace>className=</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/reducer</dir>
@@ -276,8 +198,8 @@
         <option value="$PROJECT_DIR$/test/input.test.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/style.css" />
-        <option value="$PROJECT_DIR$/src/container/buyer_home.js" />
         <option value="$PROJECT_DIR$/src/component/product_list.js" />
+        <option value="$PROJECT_DIR$/src/container/buyer_home.js" />
       </list>
     </option>
   </component>
@@ -336,6 +258,12 @@
               <item name="transformers-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="transformers-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transformers-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="container" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="transformers-client" type="b2602c69:ProjectViewProjectNode" />
@@ -852,7 +780,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57641000" />
+    <option name="totallyTimeSpent" value="57805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1188,14 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/buyer_home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/input.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -1206,11 +1126,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/product_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="21" column="108" lean-forward="false" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
+        <state relative-caret-position="106">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/buyer_home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
