@@ -15,8 +15,8 @@ describe("Login Form", () => {
     const mockStore = configureStore();
     it("should render registration page without Buyer or Seller specific fields", () => {
         const wrapper = mount(
-            <Provider store = {mockStore({form: {}, user:{}})}>
-                <Registration />
+            <Provider store={mockStore({form: {}, user: {}})}>
+                <Registration/>
             </Provider>
         );
 
@@ -31,8 +31,8 @@ describe("Login Form", () => {
 
     it("should render registration page with Buyer specific fields also when type is Buyer", () => {
         const wrapper = mount(
-            <Provider store = {mockStore({form: {}, user:{}})}>
-                <Registration />
+            <Provider store={mockStore({form: {}, user: {}})}>
+                <Registration/>
             </Provider>
         );
 
@@ -48,8 +48,8 @@ describe("Login Form", () => {
 
     it("should render registration page with Seller specific fields also when type is Seller", () => {
         const wrapper = mount(
-            <Provider store = {mockStore({form: {}, user:{}})}>
-                <Registration />
+            <Provider store={mockStore({form: {}, user: {}})}>
+                <Registration/>
             </Provider>
         );
 
@@ -65,8 +65,8 @@ describe("Login Form", () => {
 
     it("should render no error message by default", () => {
         const wrapper = mount(
-            <Provider store = {mockStore({form: {}, user:{}})}>
-                <Registration />
+            <Provider store={mockStore({form: {}, user: {}})}>
+                <Registration/>
             </Provider>
         );
 
@@ -75,8 +75,8 @@ describe("Login Form", () => {
 
     it("should render no error message by default", () => {
         const wrapper = mount(
-            <Provider store = {mockStore({form: {}, user:{}})}>
-                <Registration />
+            <Provider store={mockStore({form: {}, user: {}})}>
+                <Registration/>
             </Provider>
         );
 
